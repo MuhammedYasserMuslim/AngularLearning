@@ -1,0 +1,11 @@
+<div>
+  <img src="{{storeInfo.imgUrl}}" *ngIf="isShow">
+  <button type="button" class="btn btn-dark" (click)="isShowImage()">Light</button>
+<h1>{{storeInfo.name}}</h1>
+
+
+<h1>Branches</h1>
+<ul>
+  <li *ngFor="let item of storeInfo.branches">{{item}}</li>
+</ul>
+</div>
