@@ -1,0 +1,44 @@
+<div>
+  <label for="prdCat" class="form-label"> Category</label>
+  <select class="form-control" id="prdCat" [(ngModel)]="selectionId">
+    <option *ngFor="let cat of catList" [value]="cat.id" >{{cat.name}}</option>
+  </select>
+</div>
+<div class="text-bg-secondary">
+
+  To Test
+  {{selectionId}}
+
+  <button (click)="cahngeD()" class="btn btn-primary" type="button">Cahnge directory</button>
+</div>
+
+<hr>
+<div><table class="table">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">Name</th>
+    <th scope="col">image</th>
+    <th scope="col">quantity</th>
+    <th scope="col">price</th>
+    <th scope="col">count</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let temp of prdList">
+    <th scope="row">{{temp.id}}</th>
+    <td>{{temp.name}}</td>
+    <td><img src="{{temp.imageUrl}}" alt = "" ></td>
+    <td>{{temp.quantity}}</td>
+    <td>{{temp.price}}</td>
+    <td><input   #itemCount type ="number" class="form-control"></td>
+    <button type="button" class="btn btn-dark" (click)="buy(temp.price,itemCount.value)">buy</button>
+  </tr>
+  </tbody>
+</table>
+  <hr>
+  <h3>
+    Order Total {{orderTotalPrice}}
+  </h3>
+</div>
